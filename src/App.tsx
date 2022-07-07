@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React from "react";
+import { useState } from "react";
+import { useQuery } from "react-query";
+import { Drawer, LinearProgress, Grid, Typography } from "@material-ui/core";
+import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
+import Badge from "@material-ui/core/Badge";
+import { Wrapperr } from "./App.styles";
+export type CartItemType = {
+  id: number;
+  category: string;
+  description: string;
+  price: number;
+  image: string;
+  title: string;
+  amount: number;
 }
+
+
+
+
+
+const getProduct = async () =>
+  await (await fetch("https://fakestoreapi.com/products/1")).json();
+
+const App = () => {
+  return <div className="App">start</div>;
+};
 
 export default App;
